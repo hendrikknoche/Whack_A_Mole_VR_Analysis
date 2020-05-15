@@ -8,5 +8,5 @@ df1<-list.files(pattern = "^eval.*.csv") %>%
 
 df2<-list.files(pattern = "^sample.*.csv") %>% 
   map_df(~read_csv(.))
-df<-rbind.fill(df1,df2)%>%arrange(Framecount)    
-write_csv(df,"out.csv")
+df<-rbind.fill(df1,df2)%>%arrange(Framecount, PupilTime)    
+write_csv(df,"out2.csv")
